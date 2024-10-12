@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Highlight Saver",
+    "version": "1.0",
+    "description": "Save highlighted text, images, and videos to local storage",
+    "permissions": [
+      "contextMenus",
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
